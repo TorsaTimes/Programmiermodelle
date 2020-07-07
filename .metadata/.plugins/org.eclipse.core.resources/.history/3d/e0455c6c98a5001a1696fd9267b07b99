@@ -1,0 +1,48 @@
+package ctr;
+
+import java.util.stream.Stream;
+
+import org.omg.CORBA.COMM_FAILURE;
+
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.OptionalInt;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
+
+public class SensorAggregator {
+	
+	final List<String> list;
+	
+	SensorAggregator(List<String> records2){
+		this.list = records2;
+	}
+	
+//	public void filterDateBegin() {
+//		List<String> sensorName = records.get(0).stream().filter(x -> !"Date Time".equals(x)).collect(Collectors.toList());
+//		System.out.println(sensorName.isEmpty());
+//		System.out.println(sensorName.get(0));
+//		//sensorName.forEach(System.out::println);
+//	}
+
+	double getMax(String sensorName, String from, String to) {
+		Stream<String> streamAusListe = list.stream().filter(x -> sensorName.equals(x));
+		
+		streamAusListe.forEach(System.out::println);
+		
+		//		for(String line : list) {
+//			System.out.println(line);
+//		}
+		
+		return 0;
+		
+	}
+
+}
+	
+
+

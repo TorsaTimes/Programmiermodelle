@@ -1,0 +1,45 @@
+package ctr;
+
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import java.io.Reader;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Stream;
+
+public class TestLineReader {
+
+	public static void main(String[] args) throws FileNotFoundException {
+//		String filename = "C:\\Users\\Samde\\Dropbox\\Semester4\\Programmiermodelle\\Praktikum\\Neuer Ordner\\Jena.csv";
+//		File file=new File(filename);
+//		Reader reader = new FileReader(file);
+//		LineReader lines = new LineReader(reader);
+
+		try (BufferedReader br = new BufferedReader(new FileReader("C:\\Users\\Samde\\Dropbox\\Semester4\\Programmiermodelle\\Praktikum\\Neuer Ordner\\Jena.csv"))) {
+		    Stream<String> brObjekt = br.lines();
+		   double max = Stream.of(brObjekt).count();
+		   System.out.println(max);
+		
+		List<List<String>> records = new ArrayList<>();
+		
+//		for(String line : lines) {
+//			
+//			 String[]values = line.split(",");
+//		     records.add(Arrays.asList(values));
+//		}
+		
+		//System.out.println((records.get(0)).get(0));
+
+//		for(List<String> line : records) {
+//			SensorAggregator sA = new SensorAggregator(line);
+//		}
+		
+		
+	//}
+	
+
+}

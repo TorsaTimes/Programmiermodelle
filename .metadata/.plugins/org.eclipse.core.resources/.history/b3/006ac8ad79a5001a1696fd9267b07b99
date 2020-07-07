@@ -1,0 +1,16 @@
+package ctr;
+
+import java.util.stream.Stream;
+import java.util.stream.IntStream;
+
+public class SensorAggretor {
+
+	
+	
+	double getMax(String sensorName, String from, String to) {
+		
+
+		return 0;
+		
+	}
+}

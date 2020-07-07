@@ -1,0 +1,46 @@
+package ctr;
+
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import java.io.Reader;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
+public class TestLineReader {
+
+	public static void main(String[] args) throws FileNotFoundException {
+		String filename = "C:\\Users\\Samde\\Dropbox\\Semester4\\Programmiermodelle\\Praktikum\\Neuer Ordner\\Jena.csv";
+		File file=new File(filename);
+		Reader reader = new FileReader(file);
+		LineReader lines = new LineReader(reader);
+//		for(String line : lines)
+//		System.out.println(line);
+//		for(String line : lines)
+//		System.out.println(line); 
+		
+		List<List<String>> records = new ArrayList<>();
+		for(String line : lines) {
+			
+			try (BufferedReader br = new BufferedReader(new FileReader("C:\\Users\\Samde\\Dropbox\\Semester4\\Programmiermodelle\\Praktikum\\Neuer Ordner\\Jena.csv"))) {
+			    String line1;
+			    while ((line = br.readLine()) != null) {
+			        String[]values = line1.split(",");
+			        records.add(Arrays.asList(values));
+			    }
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		}
+		for(List<String> line : records) {
+			System.out.println(line);
+		}
+		
+
+	}
+
+}
